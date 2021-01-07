@@ -24,6 +24,11 @@ export class SearchContactComponent implements OnInit {
   }
 
   public searchContacts(){
+    if(this.firstName === undefined) this.firstName = '';
+    if(this.lastName === undefined) this.lastName = '';
+    if(this.email === undefined) this.email = '';
+    if(this.company === undefined) this.company = '';
+    if(this.departement === undefined) this.departement = '';
     let resp = this.service.searchContact(this.firstName, this.lastName, this.email, this.company, this.departement);
     console.log(this.firstName);
     resp.subscribe((data) => this.contacts = data);
