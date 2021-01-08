@@ -11,8 +11,8 @@ export class SearchContactService {
   constructor(private http: HttpClient) {
   }
 
-  searchContact(firstName: string, lastName: string, email: string, company: string, departement: string) {
-    return this.http.get(this.CONTACT_API + '?firstName=' + firstName + '&lastName=' + lastName + '&email=' +
+  searchContact(first_name: string, last_name: string, email: string, company: string, departement: string) {
+    return this.http.get(this.CONTACT_API + '?firstName=' + first_name + '&lastName=' + last_name + '&email=' +
       email + '&company=' + company + '&departement=' + departement);
   }
 }

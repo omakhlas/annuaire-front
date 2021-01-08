@@ -13,11 +13,11 @@
     <div class="row">
       <div id="custom-search-input">
         <div class="input-group col-md-6">
-          <input type="text" class="search-query form-control" placeholder="firstName"  name="last_name" [(ngModel)]="firstName"/>
+          <input type="text" class="search-query form-control" placeholder="firstName"  name="first_name" [(ngModel)]="first_name"/>
         </div>
 
         <div class="input-group col-md-6">
-          <input type="text" class="search-query form-control" placeholder="lastName"  name="last_name" [(ngModel)]="lastName"/>
+          <input type="text" class="search-query form-control" placeholder="lastName"  name="last_name" [(ngModel)]="last_name"/>
         </div>
 
         <div class="input-group col-md-6">
@@ -53,13 +53,15 @@
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let contact of contacts">
-          <td>{{contact.firstName}}</td>
-          <td>{{contact.lastName}}</td>
+        <tr *ngFor="let contact of contacts | paginate: config">
+          <td>{{contact.first_name}}</td>
+          <td>{{contact.last_name}}</td>
           <td>{{contact.email}}</td>
           <td>{{contact.company}}</td>
           <td>{{contact.departement}}</td>
         </tr>
+        <br />
+        <pagination-controls (pageChange)="pageChange($event)" class="my-pagination"></pagination-controls>
         </tbody>
       </table>
     </div>

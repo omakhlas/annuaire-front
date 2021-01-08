@@ -7,6 +7,7 @@ import { SearchContactComponent } from './search-contact/search-contact.componen
 import {SearchContactService} from './search-contact.service';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import {FormsModule} from '@angular/forms';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    NgxPaginationModule,
   ],
   providers: [SearchContactService],
   bootstrap: [AppComponent]
